@@ -29,11 +29,13 @@
         $error_message = ''; 
     }
 
+    
     if ($error_message != '') {
         include('index.php');
         exit(); 
     }
 
+  
     $future_value = $investment;
     for ($i = 1; $i <= $years; $i++) {
         $future_value += $future_value * $interest_rate * .01; 
@@ -66,6 +68,10 @@
 
         <label>Future Value:</label>
         <span><?php echo $future_value_f; ?></span><br>
+
+        <p>
+            This calculation was done on <?php echo date('n/j/Y'); ?>.
+        </p>
     </main>
 </body>
 </html>
